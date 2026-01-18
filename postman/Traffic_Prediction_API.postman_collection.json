@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "traffic-prediction-api-collection",
+    "name": "Traffic Prediction API",
+    "description": "API collection for testing Traffic Prediction FastAPI ML Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Predict Speed",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 850,\n  \"Travel Time Index\": 1.3,\n  \"Road Capacity Utilization\": 65,\n  \"Incident Reports\": 2,\n  \"Public Transport Usage\": 200,\n  \"Traffic Signal Compliance\": 80,\n  \"Parking Usage\": 75,\n  \"Pedestrian and Cyclist Count\": 25,\n  \"Roadwork and Construction Activity\": 0,\n  \"Weather Conditions_Fog\": 0,\n  \"Weather Conditions_Overcast\": 0,\n  \"Weather Conditions_Rain\": 1,\n  \"Weather Conditions_Windy\": 0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_speed",
+          "host": ["{{base_url}}"],
+          "path": ["predict_speed"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Predict Congestion",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 950,\n  \"Average Speed\": 35,\n  \"Travel Time Index\": 1.5,\n  \"Road Capacity Utilization\": 75,\n  \"Incident Reports\": 3,\n  \"Public Transport Usage\": 350,\n  \"Traffic Signal Compliance\": 70,\n  \"Parking Usage\": 85,\n  \"Pedestrian and Cyclist Count\": 40,\n  \"Roadwork and Construction Activity\": 1,\n  \"Weather Conditions_Fog\": 0,\n  \"Weather Conditions_Overcast\": 0,\n  \"Weather Conditions_Rain\": 0,\n  \"Weather Conditions_Windy\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_congestion",
+          "host": ["{{base_url}}"],
+          "path": ["predict_congestion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "High Traffic Scenario",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 1200,\n  \"Average Speed\": 20,\n  \"Travel Time Index\": 2.5,\n  \"Road Capacity Utilization\": 95,\n  \"Incident Reports\": 5,\n  \"Public Transport Usage\": 500,\n  \"Traffic Signal Compliance\": 60,\n  \"Parking Usage\": 95,\n  \"Pedestrian and Cyclist Count\": 80,\n  \"Roadwork and Construction Activity\": 1,\n  \"Weather Conditions_Fog\": 0,\n  \"Weather Conditions_Overcast\": 0,\n  \"Weather Conditions_Rain\": 1,\n  \"Weather Conditions_Windy\": 0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_congestion",
+          "host": ["{{base_url}}"],
+          "path": ["predict_congestion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Low Traffic Scenario",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 200,\n  \"Travel Time Index\": 1.0,\n  \"Road Capacity Utilization\": 25,\n  \"Incident Reports\": 0,\n  \"Public Transport Usage\": 50,\n  \"Traffic Signal Compliance\": 95,\n  \"Parking Usage\": 20,\n  \"Pedestrian and Cyclist Count\": 5,\n  \"Roadwork and Construction Activity\": 0,\n  \"Weather Conditions_Fog\": 0,\n  \"Weather Conditions_Overcast\": 0,\n  \"Weather Conditions_Rain\": 0,\n  \"Weather Conditions_Windy\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_speed",
+          "host": ["{{base_url}}"],
+          "path": ["predict_speed"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rush Hour - Morning",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 1000,\n  \"Travel Time Index\": 1.8,\n  \"Road Capacity Utilization\": 80,\n  \"Incident Reports\": 1,\n  \"Public Transport Usage\": 400,\n  \"Traffic Signal Compliance\": 75,\n  \"Parking Usage\": 80,\n  \"Pedestrian and Cyclist Count\": 60,\n  \"Roadwork and Construction Activity\": 0,\n  \"Weather Conditions_Fog\": 0,\n  \"Weather Conditions_Overcast\": 1,\n  \"Weather Conditions_Rain\": 0,\n  \"Weather Conditions_Windy\": 0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_speed",
+          "host": ["{{base_url}}"],
+          "path": ["predict_speed"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Foggy Weather Scenario",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Traffic Volume\": 700,\n  \"Average Speed\": 30,\n  \"Travel Time Index\": 1.6,\n  \"Road Capacity Utilization\": 55,\n  \"Incident Reports\": 2,\n  \"Public Transport Usage\": 250,\n  \"Traffic Signal Compliance\": 70,\n  \"Parking Usage\": 60,\n  \"Pedestrian and Cyclist Count\": 15,\n  \"Roadwork and Construction Activity\": 0,\n  \"Weather Conditions_Fog\": 1,\n  \"Weather Conditions_Overcast\": 0,\n  \"Weather Conditions_Rain\": 0,\n  \"Weather Conditions_Windy\": 0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/predict_congestion",
+          "host": ["{{base_url}}"],
+          "path": ["predict_congestion"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
